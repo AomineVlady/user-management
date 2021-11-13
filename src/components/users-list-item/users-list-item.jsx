@@ -1,17 +1,19 @@
 import React from "react";
-import './user-list-item.css'
+import { Link } from "react-router-dom";
+import './user-list-item.css';
 
-const UsersListItem = (props) => {
+const UsersListItem = (props) => {  
     const user = props.card;
+    const popupPath = `/popup/${user.id}`
     return (
         <li className="user__item user">
-            <div className="user__avatar">
-                <img src={user.avatar} alt={user.first_name} width="130" height="130"/>
+            <Link to={popupPath}><div className="user__avatar">
+                <img src={user.avatar} alt={user.name} width="130" height="130"/>
             </div>
+            </Link>
             <div className="user__content">
-                <p className="user__name"><span className="desc">Name:</span> {user.first_name}</p>
-                <p className="user__surname"><span className="desc">Surname:</span> {user.last_name}</p>
-                <p className="user__email"><span className="desc">E-mail:</span><a href="/" className="user__email-link"> {user.email}</a></p>
+                <Link to={popupPath} className="user__name user-link"><h3>{user.name} {user.surname}</h3></Link>
+                <a href="https://mail.ru/" className="user__email-link">{user.email}</a>
             </div>
         </li>
     );

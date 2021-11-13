@@ -3,10 +3,10 @@ import UsersListItem from "../users-list-item/users-list-item";
 import './users-list.css';
 
 const UsersList = (props) => {
-    const userList = props.userList.data;
+    const userDataList = props.userList;
     return (
         <ul className="user__list">
-            {userList.map(user => <UsersListItem key={user.id} card={user} />)}
+            {userDataList.map(user => <UsersListItem key={user.id} card={user} />)}
         </ul>
     );
 };

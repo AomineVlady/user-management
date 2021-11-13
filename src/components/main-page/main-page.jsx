@@ -1,20 +1,13 @@
-import React, { useEffect } from "react";
 import UsersList from "../users-list/users-list.jsx";
-import { useSelector } from 'react-redux';
+import React from "react";
 import "./main-page.css";
-import { loadUserList } from "./store/main-page.api.js";
-import { useDispatch } from "react-redux";
 
-const MainPage = () => {
-    const userList = useSelector(state => state.mainPageReducer.userList)
-    const dispatch = useDispatch()
-    useEffect(() => {dispatch(loadUserList())},[])
-
+const MainPage = (props) => {
     return (
         <main className="main">
             <div className="container">
                 <div className="main__inner">
-                {userList && <UsersList userList={userList} />}
+                    <UsersList userList={props.userList} />
                 </div>
             </div>
         </main>
