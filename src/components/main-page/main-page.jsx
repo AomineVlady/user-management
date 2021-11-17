@@ -1,6 +1,6 @@
 import UsersList from "../users-list/users-list.jsx";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { createElement, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./main-page.css";
 import adapter from "../../common/utils.js";
@@ -26,11 +26,13 @@ const MainPage = () => {
         getResponse(`https://reqres.in/api/users?page=${currentPage}`);
     }, [currentPage]);
 
-    const page1 = () => {
+    const page1 = (evt) => {
+        evt.preventDefault();
         dispatch({ type: SET_CURRENT_PAGE, payload: 1 });
     }
 
-    const page2 = () => {
+    const page2 = (evt) => {
+        evt.preventDefault();
         dispatch({ type: SET_CURRENT_PAGE, payload: 2 });
     }
 
@@ -41,8 +43,16 @@ const MainPage = () => {
                     {userList?.length ? <UsersList /> : <p>NOTHING DATA</p>}
                     {showPopup.visually ? <Popup /> : null}
                 </div>
-                <button onClick={page1}>1</button>
-                <button onClick={page2}>2</button>
+
+                <ul className="pagination__list">
+                    <li className="pagination__item">
+                        <a href="/" onClick={page1}>1</a>
+                    </li>
+                    <li className="pagination__item">
+                        <a href="/" onClick={page2}>2</a>
+                    </li>
+                </ul>
+
             </div>
         </main>
     )

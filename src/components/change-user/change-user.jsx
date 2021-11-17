@@ -1,27 +1,26 @@
 import React from "react";
 import './change-user.css';
-import getUser from "../../common/utils";
-import { Link, useParams } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { pathList } from "../../common/constants";
 
-const ChangeUser = props => {
-    const usersList = props.userList;
-    const { id } = useParams();
-    const activeUser = getUser(usersList, +id);
+const ChangeUser = () => {
+    const user = useSelector(state => state.popupReducer.user)
+    console.log(user)
     return (
         <div className="overlay">
             <form action="/" className="change__form">
                 <div className="change__content">
                     <label className="change__form-data" htmlFor="user-name">Name:
-                        <input type="text" id="user-name" defaultValue={activeUser.name}/>
+                        <input type="text" id="user-name" defaultValue={user.first_name} />
                     </label>
                     <label className="change__form-data" htmlFor="user-surname">Surname:
-                        <input type="text" id="user-surname" defaultValue={activeUser.surname}/>
+                        <input type="text" id="user-surname" defaultValue={user.last_name} />
                     </label>
                 </div>
                 <div className="change__buttons">
-                    <button type="submit" className="change__submit-btn">Change</button>
-                    <Link to={pathList.popup} className="change__submit-btn">Prev</Link>
+                    <Link to={pathList.main} className="change__submit-btn">back</Link>
+                    <button type="submit" className="change__submit-btn">to change</button>
                 </div>
             </form>
         </div>

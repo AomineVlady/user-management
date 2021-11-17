@@ -1,10 +1,9 @@
 import { Route, Routes } from 'react-router';
 import { pathList } from './common/constants.js';
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Header from './components/header/header';
 import MainPage from './components/main-page/main-page.jsx';
-import Popup from './components/main-page/popup/popup.jsx';
 import ChangeUser from './components/change-user/change-user.jsx';
 
 const App = () => {
