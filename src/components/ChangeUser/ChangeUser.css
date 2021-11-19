@@ -22,39 +22,55 @@
   padding: 5px;
   border-radius: 5px;
   outline: none;
+  border: 1px solid #919191;
   transition: all 0.3s ease;
 }
 
 .change__form-data input:hover {
-  border: 2px solid rgb(0, 55, 219);
+  border: 1px solid rgb(0, 55, 219);
 }
 
 .change__form-data input:focus {
-  border: 2px solid rgb(255, 138, 29);
+  border: 1px solid rgb(255, 138, 29);
 }
 
-.change__submit-btn {
+.change__submit-button {
   cursor: pointer;
-  border: 2px solid rgb(0, 55, 219);
-  background-color: #fff;
+  border: 1px solid rgb(0, 55, 219);
+  background-color: rgb(0, 55, 219);
   border-radius: 5px;
-
+  color:#fff;
   text-decoration: none;
-  color: #000;
   font-size: 14px;
   font-weight: 400;
 
   transition: all 0.3s ease;
-  padding: 2px 10px;
+  padding: 5px 10px;
 }
 
-.change__submit-btn:hover {
-  border: 2px solid rgb(255, 138, 29);
-  color: rgb(255, 138, 29);
+.change__submit-button:hover {
+  border: 1px solid rgb(0, 55, 219);
+  background-color: #fff;
+  border-radius: 5px;
+  color: rgb(0, 55, 219);
+}
+
+.change__close-button svg{
+  margin: 0;
+  fill: #000;
+  width: 30px;
+  height: 30px;
+  opacity: .7;
+  transition: all .3s ease;
+}
+
+.change__close-button:hover svg{
+  fill: rgb(0, 55, 219);
+  opacity: .7;
 }
 
 .change__buttons {
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;

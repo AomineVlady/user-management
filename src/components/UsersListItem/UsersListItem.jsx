@@ -21,7 +21,7 @@ const UsersListItem = (props) => {
                 <a href="/" className="user__name user-link" onClick={openPopup}><h3>{user.name} {user.surname}</h3></a>
                 <a href="https://mail.ru/" className="user__email-link">{user.email}</a>
             </div>
-            {user.updatedAt ? <span className="user__change-data">Change date:{user.updatedAt}</span> : ""}
+            {user.updatedAt ? <span className="user__change-data">Change date: {user.updatedAt}</span> : ""}
         </li>
     );
 };

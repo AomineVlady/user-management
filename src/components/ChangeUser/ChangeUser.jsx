@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { pathList } from "../../common/constants";
 import { UPDATE_USER_DATA_REQUESTED } from "../MainPage/Popup/store/popup.action";
 import { GET_USERS } from "../MainPage/store/main-page.action";
+import SvgIconArrow from "../../common/svgIcons/SvgIconArrow";
 
 const ChangeUser = () => {
     const user = useSelector(state => state.popupReducer.user);
@@ -62,8 +63,8 @@ const ChangeUser = () => {
                     </label>
                 </div>
                 <div className="change__buttons">
-                    <Link to={pathList.main} className="change__submit-btn">back</Link>
-                    <button type="submit" className="change__submit-btn">to change</button>
+                    <Link to={pathList.main} className="change__close-button"><SvgIconArrow /></Link>
+                    <button type="submit" className="change__submit-button">to change</button>
                 </div>
             </form>
         </div>

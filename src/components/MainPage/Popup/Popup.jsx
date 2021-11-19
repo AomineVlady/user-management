@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import './Popup.css';
 import { Link } from "react-router-dom";
 import { pathList } from "../../../common/constants.js";
-import SvgIcon from "../../../common/svg-sprites.jsx";
+import SvgIconClose from "../../../common/svgIcons/SvgIconClose";
+import SvgIconSettings from "../../../common/svgIcons/SvgIconSettings";
 import { useDispatch, useSelector } from "react-redux";
 import { GET_USER_REQUESTED } from './store/popup.action'
 import { SHOW_POPUP } from "../../MainPage/store/main-page.action"
@@ -30,7 +31,7 @@ const Popup = () => {
     return (
         <div className="popup overlay">
             {user ? <div className="popup__content">
-                <button type="button" className="popup__close-btn" onClick={closePopup}><SvgIcon id={'cross'} />
+                <button type="button" className="popup__close-btn" onClick={closePopup}><SvgIconClose />
                 </button>
                 <div className="popup__picture">
                     <img src={user.avatar} alt="avatar of user" width="130" height="130" />
@@ -43,7 +44,7 @@ const Popup = () => {
                         <a href="https://mail.ru/" className="user__email-link"> {user.email}</a>
                     </p>
                 </div>
-                <Link to={pathList.change_data} className="user__change-btn"><SvgIcon id={'settings'} /></Link>
+                <Link to={pathList.change_data} className="user__change-btn"><SvgIconSettings /></Link>
             </div> : null}
         </div>
     )
