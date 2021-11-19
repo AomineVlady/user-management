@@ -7,7 +7,6 @@ import { UPDATE_USER_DATA_REQUESTED } from "../MainPage/Popup/store/popup.action
 import { GET_USERS } from "../MainPage/store/main-page.action";
 
 const ChangeUser = () => {
-    const currentPage = useSelector(state => state.mainPageReducer.currentPage);
     const user = useSelector(state => state.popupReducer.user);
     const userList = useSelector(state => state.mainPageReducer.userList);
     const dispatch = useDispatch();
@@ -41,7 +40,8 @@ const ChangeUser = () => {
                 return {
                     ...userData,
                     name: user.first_name,
-                    surname: user.last_name
+                    surname: user.last_name,
+                    updatedAt: user.updatedAt
                 }
             }
             else return userData;

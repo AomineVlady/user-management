@@ -1,9 +1,9 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import './Popup.css';
 import { Link } from "react-router-dom";
 import { pathList } from "../../../common/constants.js";
 import SvgIcon from "../../../common/svg-sprites.jsx";
-import { useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { GET_USER_REQUESTED } from './store/popup.action'
 import { SHOW_POPUP } from "../../MainPage/store/main-page.action"
 
@@ -14,7 +14,7 @@ const Popup = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch({type:GET_USER_REQUESTED, payload: `https://reqres.in/api/users/${showPopup.userId}`})
+        dispatch({ type: GET_USER_REQUESTED, payload: `https://reqres.in/api/users/${showPopup.userId}` })
     }, [])
 
     const closePopup = () => {

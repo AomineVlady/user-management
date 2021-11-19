@@ -2,13 +2,13 @@ import {
     GET_USERS,
     SET_CURRENT_PAGE,
     SHOW_POPUP,
+    SET_TOTAL_PAGES,
 } from "./main-page.action";
-
-
 
 const initialState = {
     userList: null,
-    currentPage: 1,
+    currentPage: null,
+    totalPages: null,
     showPopup: {
         visually: false,
         userId: null,
@@ -22,6 +22,12 @@ const mainPageReducer = (state = initialState, action) => {
                 ...state,
                 userList: action.payload,
             });
+
+        case SET_TOTAL_PAGES:
+            return({
+                ...state,
+                totalPages: action.payload,
+            })
 
         case SET_CURRENT_PAGE:
             return ({

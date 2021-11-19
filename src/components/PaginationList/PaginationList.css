@@ -1,0 +1,14 @@
+.pagination__list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 7%;
+  right: 0;
+  left: 0;
+}
