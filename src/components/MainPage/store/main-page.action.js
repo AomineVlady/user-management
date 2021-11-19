@@ -1,0 +1,4 @@
+export const GET_USERS = "GET_USERS";
+export const SHOW_POPUP = "SHOW_POPUP";
+export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
+export const GET_USERS_REQUESTED = "GET_USERS_REQUESTED";

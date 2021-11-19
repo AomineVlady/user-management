@@ -4,8 +4,10 @@ import {
     SHOW_POPUP,
 } from "./main-page.action";
 
+
+
 const initialState = {
-    userList: [],
+    userList: null,
     currentPage: 1,
     showPopup: {
         visually: false,
@@ -32,6 +34,7 @@ const mainPageReducer = (state = initialState, action) => {
                 ...state,
                 showPopup: action.payload,
             });
+            
         default:
             return state;
     }

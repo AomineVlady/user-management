@@ -13,6 +13,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  bottom: 7%;
+  right: 0;
+  left: 0;
+}
+
+.pagination__item{
+  margin: 0;
+  padding: 0;
 }
 
 .pagination__item a {

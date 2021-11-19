@@ -1,26 +1,27 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { SHOW_POPUP } from "../main-page/store/main-page.action";
-import './user-list-item.css';
+import { useDispatch} from "react-redux";
+import { SHOW_POPUP } from "../MainPage/store/main-page.action";
+import './UserListItem.css';
 
 const UsersListItem = (props) => {  
     const user = props.card;
     const dispatch = useDispatch();
 
-    const openPopup = () =>{
+    const openPopup = (evt) =>{
+        evt.preventDefault();
         dispatch({type:SHOW_POPUP, payload:{visually:true, userId:user.id}})
     }
 
     return (
         <li className="user__item user">
-            <div className="user__avatar" onClick={openPopup}>
+            <button type="button" className="user__avatar" onClick={openPopup}>
                 <img src={user.avatar} alt={user.name} width="130" height="130"/>
-            </div>
+            </button>
             <div className="user__content">
-                <span className="user__name user-link" onClick={openPopup}><h3>{user.name} {user.surname}</h3></span>
+                <a href="/" className="user__name user-link" onClick={openPopup}><h3>{user.name} {user.surname}</h3></a>
                 <a href="https://mail.ru/" className="user__email-link">{user.email}</a>
             </div>
+            {user.updatedAt ? <span className="user__change-data">Change date:{user.updatedAt}</span> : ""}
         </li>
     );
 };

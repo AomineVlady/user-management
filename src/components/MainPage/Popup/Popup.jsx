@@ -1,28 +1,20 @@
-import React, { useEffect } from "react";
-import './popup.css';
-import axios from "axios";
+import React, { useEffect} from "react";
+import './Popup.css';
 import { Link } from "react-router-dom";
 import { pathList } from "../../../common/constants.js";
 import SvgIcon from "../../../common/svg-sprites.jsx";
-import { useDispatch, useSelector } from "react-redux";
-import { GET_USER } from './store/popup.action'
-import { SHOW_POPUP } from "../../main-page/store/main-page.action"
+import { useDispatch, useSelector} from "react-redux";
+import { GET_USER_REQUESTED } from './store/popup.action'
+import { SHOW_POPUP } from "../../MainPage/store/main-page.action"
 
 const Popup = () => {
+
     let user = useSelector(state => state.popupReducer.user);
     const showPopup = useSelector(state => state.mainPageReducer.showPopup);
     const dispatch = useDispatch();
 
-    const getUser = async () => {
-        return await axios.get(`https://reqres.in/api/users/${showPopup.userId}`).then(
-            (response) => {
-                dispatch({ type: GET_USER, payload: response.data.data })
-            })
-            .catch((error) => console.error(error));
-    }
-
     useEffect(() => {
-        getUser();
+        dispatch({type:GET_USER_REQUESTED, payload: `https://reqres.in/api/users/${showPopup.userId}`})
     }, [])
 
     const closePopup = () => {

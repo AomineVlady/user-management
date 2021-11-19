@@ -1,9 +1,19 @@
 .user__item{
+    position: relative;
     margin: 20px;
     width: 40%;
     background-color: #fff;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, .3);
     border-radius: 10px;
+}
+
+.user__change-data{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 10px;
+    color:#000;
+    opacity: .5;
 }
 
 .user{
@@ -42,6 +52,9 @@
 }
 
 .user__avatar{
+    border: none;
+    padding: 0;
+    margin: 0;
     cursor: pointer;
     overflow:hidden;
     width: 130px;

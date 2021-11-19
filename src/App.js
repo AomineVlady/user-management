@@ -2,9 +2,9 @@ import { Route, Routes } from 'react-router';
 import { pathList } from './common/constants.js';
 import React from 'react';
 import './App.css';
-import Header from './components/header/header';
-import MainPage from './components/main-page/main-page.jsx';
-import ChangeUser from './components/change-user/change-user.jsx';
+import Header from './components/Header/Header.jsx';
+import MainPage from './components/MainPage/MainPage.jsx';
+import ChangeUser from './components/ChangeUser/ChangeUser.jsx';
 
 const App = () => {
   return (

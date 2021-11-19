@@ -1,7 +1,8 @@
-import { GET_USER } from "./popup.action.js"
+import { GET_USER, UPDATE_USER_DATA } from "./popup.action.js"
 
 const initialState ={
     user: null,
+    
 }
 
 const popupReducer = (state = initialState, action) =>{
@@ -10,7 +11,13 @@ const popupReducer = (state = initialState, action) =>{
             return({
                 ...state,
                 user: action.payload,
-            })
+            });
+
+        case UPDATE_USER_DATA:
+            return({
+                ...state,
+                user: action.payload,
+            });
     
         default:
             return state;

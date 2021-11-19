@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import popupReducer from '../components/main-page/popup/store/popup.reducer'
-import mainPageReducer from '../components/main-page/store/main-page.reducer';
+import popupReducer from '../components/MainPage/Popup/store/popup.reducer'
+import mainPageReducer from '../components/MainPage/store/main-page.reducer';
 
 const rootReducer = combineReducers({
     mainPageReducer,

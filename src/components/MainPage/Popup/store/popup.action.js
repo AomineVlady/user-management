@@ -1,0 +1,7 @@
+export const GET_USER = "GET_USER";
+export const GET_USER_REQUESTED = "GET_USER_REQUESTED";
+
+export const UPDATE_USER_DATA = "UPDATE_USER_DATA";
+export const UPDATE_USER_DATA_REQUESTED = "UPDATE_USER_DATA_REQUESTED";
+
+export default GET_USER;
