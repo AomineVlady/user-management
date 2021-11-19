@@ -2,7 +2,7 @@ import UsersList from "../UsersList/UsersList.jsx";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./MainPage.css";
-import { GET_USERS_REQUESTED,SHOW_POPUP } from "./store/main-page.action.js";
+import { GET_USERS_REQUESTED, SHOW_POPUP } from "./store/main-page.action.js";
 import Popup from "./Popup/Popup.jsx";
 import PaginationList from "../PaginationList/PaginationList.jsx";
 
@@ -15,10 +15,10 @@ const MainPage = () => {
 
 
     useEffect(() => {
-        if (!userList?.length){
+        if (!userList?.length) {
             dispatch({ type: GET_USERS_REQUESTED, payload: `https://reqres.in/api/users?page=${currentPage}` });
         }
-        dispatch({type:SHOW_POPUP, payload:{visually:false}})
+        dispatch({ type: SHOW_POPUP, payload: { visually: false } })
     }, []);
 
     return (
@@ -28,7 +28,7 @@ const MainPage = () => {
                     {userList?.length ? <UsersList /> : <p className="loading__message">...Loading</p>}
                     {showPopup.visually ? <Popup /> : null}
                 </div>
-                {totalPages ? <PaginationList pageCount={totalPages}/> : ""}
+                {totalPages ? <PaginationList pageCount={totalPages} /> : null}
             </div>
         </main>
     )

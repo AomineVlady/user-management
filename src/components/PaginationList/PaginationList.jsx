@@ -9,11 +9,10 @@ const PaginationList = ({ pageCount }) => {
         pagesList.push(i)
     }
 
-    
     return (
+
         <ul className="pagination__list">
-            {pagesList.map(item => <PaginationListItem key={+item} pageNumber={+item}/>
-            )}
+            {pagesList.map(item => <PaginationListItem key={+item} pageNumber={+item} />)}
         </ul>
     )
 }

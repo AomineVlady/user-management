@@ -11,11 +11,11 @@ const App = () => {
     <>
       <Header />
       <Routes>
-        <Route path={pathList.main} element={<MainPage/>} />
-        <Route path={pathList.change_data} element={<ChangeUser/>} />
+        <Route path={pathList.main} element={<MainPage />} />
+        <Route path={pathList.change_data} element={<ChangeUser />} />
       </Routes>
     </>
-  );
-}
+  )
+};
 
 export default App;
