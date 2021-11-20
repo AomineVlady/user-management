@@ -8,7 +8,7 @@ const UsersList = () => {
 
     return (
         <ul className="user__list">
-            {userDataList.map(user => <UsersListItem key={user.id} card={user} />)}
+            {userDataList.map(user => <UsersListItem key={user.id} user={user} />)}
         </ul>
     );
 };

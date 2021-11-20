@@ -1,6 +1,7 @@
 import React from "react";
 import "./PaginationList.css";
 import PaginationListItem from "../PaginationListItem/PaginationListItem.jsx";
+import PropTypes from 'prop-types';
 
 const PaginationList = ({ pageCount }) => {
 
@@ -15,6 +16,10 @@ const PaginationList = ({ pageCount }) => {
             {pagesList.map(item => <PaginationListItem key={+item} pageNumber={+item} />)}
         </ul>
     )
+}
+
+PaginationList.propTypes = {
+    pageCount: PropTypes.number.isRequired,
 }
 
 export default PaginationList;

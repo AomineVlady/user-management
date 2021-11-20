@@ -2,8 +2,9 @@ import React from "react";
 import "./PaginationListItem.css";
 import { GET_USERS_REQUESTED, SET_CURRENT_PAGE } from "../MainPage/store/main-page.action";
 import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 
-const PaginationListItem = (props) => {
+const PaginationListItem = ({pageNumber}) => {
     const dispatch = useDispatch();
 
     const togglePage = (evt) => {
@@ -14,9 +15,13 @@ const PaginationListItem = (props) => {
 
     return (
         <li className="pagination__item">
-            <a href="/" onClick={togglePage}>{props.pageNumber}</a>
+            <a href="/" onClick={togglePage}>{pageNumber}</a>
         </li>
     )
+}
+
+PaginationListItem.propTypes = {
+    pageNumber: PropTypes.number.isRequired,
 }
 
 export default PaginationListItem;

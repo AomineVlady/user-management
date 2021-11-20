@@ -2,9 +2,9 @@ import React from "react";
 import { useDispatch} from "react-redux";
 import { SHOW_POPUP } from "../MainPage/store/main-page.action";
 import './UserListItem.css';
+import PropTypes from "prop-types";
 
-const UsersListItem = (props) => {  
-    const user = props.card;
+const UsersListItem = ({user}) => {
     const dispatch = useDispatch();
 
     const openPopup = (evt) =>{
@@ -25,5 +25,14 @@ const UsersListItem = (props) => {
         </li>
     );
 };
+
+UsersListItem.propTypes = {
+    user: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        surname: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired,
+        updatedAt: PropTypes.string,
+    }).isRequired,
+}
 
 export default UsersListItem;
