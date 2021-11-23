@@ -11,7 +11,7 @@ const App = () => {
     <>
       <Header />
       <Routes>
-        <Route path={pathList.main} element={<MainPage />} />
+        <Route exact path={pathList.main} element={<MainPage />} />
         <Route path={pathList.change_data} element={<ChangeUser />} />
       </Routes>
     </>

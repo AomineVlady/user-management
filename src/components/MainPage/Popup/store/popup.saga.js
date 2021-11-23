@@ -10,7 +10,7 @@ function* getUserData ({payload}){
 
 function* postChangedUser({payload}){
     const data = yield call(changeUserData, payload);
-    yield put({type:UPDATE_USER_DATA, payload: {...data, id: payload.id}});
+    yield put({type:UPDATE_USER_DATA, payload: {...data}}); 
 }
 
 function* popupSaga(){

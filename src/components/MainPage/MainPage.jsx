@@ -9,17 +9,15 @@ import PaginationList from "../PaginationList/PaginationList.jsx";
 const MainPage = () => {
     const dispatch = useDispatch();
     const userList = useSelector(state => state.mainPageReducer.userList);
-    const currentPage = useSelector(state => state.mainPageReducer.currentPage);
     const showPopup = useSelector(state => state.mainPageReducer.showPopup);
     const totalPages = useSelector(state => state.mainPageReducer.totalPages);
 
-
     useEffect(() => {
         if (!userList?.length) {
-            dispatch({ type: GET_USERS_REQUESTED, payload: `https://reqres.in/api/users?page=${currentPage}` });
+            dispatch({ type: GET_USERS_REQUESTED, payload: 'http://localhost:5000/api/users' });
         }
         dispatch({ type: SHOW_POPUP, payload: { visually: false } })
-    }, []);
+    }, [userList]);
 
     return (
         <main className="main">

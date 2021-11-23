@@ -5,7 +5,7 @@ import getResponse from './main-page.api';
 
 function* getUserData ({payload}){
     const data = yield call(getResponse, payload);
-    yield put({type:GET_USERS, payload: adapter(data.data)});
+    yield put({type:GET_USERS, payload: adapter(data)});
     yield put({type:SET_TOTAL_PAGES, payload: data.total_pages});
 }
 

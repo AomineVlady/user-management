@@ -15,7 +15,7 @@ const Popup = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch({ type: GET_USER_REQUESTED, payload: `https://reqres.in/api/users/${showPopup.userId}` })
+        dispatch({ type: GET_USER_REQUESTED, payload: `http://localhost:5000/api/users/${showPopup.userId}` })
     }, [])
 
     const closePopup = () => {

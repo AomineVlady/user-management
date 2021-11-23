@@ -4,7 +4,7 @@ const adapter = (dataList) => {
     const usersList = [];
     dataList.forEach(user => {
         usersList.push({
-            id: user.id,
+            id: user._id,
             email: user.email,
             name: user.first_name,
             surname: user.last_name,

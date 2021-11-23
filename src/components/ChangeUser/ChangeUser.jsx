@@ -9,29 +9,28 @@ import SvgIconArrow from "../../common/svgIcons/SvgIconArrow";
 
 const ChangeUser = () => {
     const user = useSelector(state => state.popupReducer.user);
-    const userList = useSelector(state => state.mainPageReducer.userList);
+    const userList = useSelector(state=> state.mainPageReducer.userList)
     const dispatch = useDispatch();
     const [formValue, setFormValue] = useState({
         first_name: user.first_name,
         last_name: user.last_name
     });
 
-    const handleSubmit = (evt) => {
-        evt.preventDefault();
+    const handleSubmit = () => {
         dispatch({
             type: UPDATE_USER_DATA_REQUESTED,
             payload: {
-                url: `https://reqres.in/api/users/${user.id}`,
+                url: `http://localhost:5000/api/users/${user._id}`,
                 data: formValue,
-                id: user.id,
+                id: user._id,
             }
         });
     }
 
-    const handleChange = (event) => {
+    const handleChange = (evt) => {
         setFormValue({
             ...formValue,
-            [event.target.name]: event.target.value
+            [evt.target.name]: evt.target.value
         });
     }
 
@@ -66,7 +65,7 @@ const ChangeUser = () => {
                     <Link to={pathList.main} className="change__close-button"><SvgIconArrow /></Link>
                     <button type="submit" className="change__submit-button">to change</button>
                 </div>
-            </form>
+            </form> 
         </div>
     )
 }

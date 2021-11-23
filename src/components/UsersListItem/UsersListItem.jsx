@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 
 const UsersListItem = ({user}) => {
     const dispatch = useDispatch();
-
     const openPopup = (evt) =>{
         evt.preventDefault();
         dispatch({type:SHOW_POPUP, payload:{visually:true, userId:user.id}})
@@ -28,9 +27,11 @@ const UsersListItem = ({user}) => {
 
 UsersListItem.propTypes = {
     user: PropTypes.shape({
+        id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         surname: PropTypes.string.isRequired,
         email: PropTypes.string.isRequired,
+        avatar: PropTypes.string.isRequired,
         updatedAt: PropTypes.string,
     }).isRequired,
 }
