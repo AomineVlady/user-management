@@ -10,7 +10,7 @@ import { SHOW_POPUP } from "../../MainPage/store/main-page.action"
 
 const Popup = () => {
 
-    let user = useSelector(state => state.popupReducer.user);
+    const user = useSelector(state => state.popupReducer.user);
     const showPopup = useSelector(state => state.mainPageReducer.showPopup);
     const dispatch = useDispatch();
 

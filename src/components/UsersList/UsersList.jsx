@@ -5,7 +5,6 @@ import './UsersList.css';
 
 const UsersList = () => {
     const userDataList = useSelector(state => state.mainPageReducer.userList);
-
     return (
         <ul className="user__list">
             {userDataList.map(user => <UsersListItem key={user.id} user={user} />)}
