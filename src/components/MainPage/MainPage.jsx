@@ -14,10 +14,10 @@ const MainPage = () => {
     const totalPages = useSelector(state => state.mainPageReducer.totalPages);
 
     useEffect(() => {
+        dispatch({ type: SHOW_POPUP, payload: { visually: false } })
         if (!userList?.length) {
             dispatch({ type: GET_USERS_REQUESTED, payload: `http://localhost:5000/api/users/?page=${currentPage}` });
         }
-        dispatch({ type: SHOW_POPUP, payload: { visually: false } })
     }, [userList]);
 
     return (
