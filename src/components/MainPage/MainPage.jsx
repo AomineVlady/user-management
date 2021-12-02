@@ -25,7 +25,7 @@ const MainPage = () => {
             <div className="container">
                 <div className="main__inner">
                     {userList?.length ? <UsersList /> : <p className="loading__message">...Loading</p>}
-                    {showPopup.visually ? <Popup /> : null}
+                    {showPopup?.visually ? <Popup /> : null}
                 </div>
                 {totalPages ? <PaginationList pageCount={totalPages} /> : null}
             </div>
