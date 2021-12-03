@@ -1,10 +1,12 @@
-import { call, put, takeEvery } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import {
-    getUser,
     GET_USER_REQUESTED,
-    updateUserData,
     UPDATE_USER_DATA_REQUESTED,
 } from "./popup.action";
+import {
+    getUser,
+    updateUserData,
+} from "./popup.action-creators";
 import getUserResponse from "./popup.api";
 import changeUserData from "../../../ChangeUser/change-user.api";
 
@@ -19,8 +21,8 @@ function* postChangedUser({ payload }) {
 }
 
 function* popupSaga() {
-    yield takeEvery(GET_USER_REQUESTED, getUserData);
-    yield takeEvery(UPDATE_USER_DATA_REQUESTED, postChangedUser);
+    yield takeLatest(GET_USER_REQUESTED, getUserData);
+    yield takeLatest(UPDATE_USER_DATA_REQUESTED, postChangedUser);
 }
 
 export default popupSaga;

@@ -2,7 +2,8 @@ import UsersList from "../UsersList/UsersList.jsx";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./MainPage.css";
-import { getUsersRequested, SHOW_POPUP } from "./store/main-page.action.js";
+import { SHOW_POPUP } from "./store/main-page.action.js";
+import { getUsersRequested } from "./store/main-page.action-creators";
 import Popup from "./Popup/Popup.jsx";
 import PaginationList from "../PaginationList/PaginationList.jsx";
 

@@ -3,8 +3,8 @@ import './ChangeUser.css';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { pathList } from "../../common/constants";
-import { updateUserDataRequested } from "../MainPage/Popup/store/popup.action";
-import { getUsers } from "../MainPage/store/main-page.action";
+import { updateUserDataRequested } from "../MainPage/Popup/store/popup.action-creators";
+import { getUsers } from "../MainPage/store/main-page.action-creators";
 import SvgIconArrow from "../../common/svgIcons/SvgIconArrow";
 
 const ChangeUser = () => {

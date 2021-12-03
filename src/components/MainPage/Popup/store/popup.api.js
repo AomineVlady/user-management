@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const getUserResponce = async (url) => {
-    return await axios.get(url).then(
+const getUserResponce = async (userId) => {
+    return await axios.get(`http://localhost:5000/api/users/${userId}`).then(
         response => response.data)
         .catch((error) => console.error(error));
 }
