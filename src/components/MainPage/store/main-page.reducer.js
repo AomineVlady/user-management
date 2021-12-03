@@ -18,29 +18,29 @@ const initialState = {
 const mainPageReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_USERS:
-            return ({
+            return {
                 ...state,
                 userList: action.payload,
-            });
+            };
 
         case SET_TOTAL_PAGES:
-            return({
+            return {
                 ...state,
                 totalPages: action.payload,
-            })
+            };
 
         case SET_CURRENT_PAGE:
-            return ({
+            return {
                 ...state,
                 currentPage: action.payload,
-            });
+            };
 
         case SHOW_POPUP:
-            return ({
+            return {
                 ...state,
                 showPopup: action.payload,
-            });
-            
+            };
+
         default:
             return state;
     }
