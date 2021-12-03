@@ -1,20 +1,20 @@
 import React from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { SHOW_POPUP } from "../MainPage/store/main-page.action";
 import './UserListItem.css';
 import PropTypes from "prop-types";
 
-const UsersListItem = ({user}) => {
+const UsersListItem = ({ user }) => {
     const dispatch = useDispatch();
-    const openPopup = (evt) =>{
+    const openPopup = (evt) => {
         evt.preventDefault();
-        dispatch({type:SHOW_POPUP, payload:{visually:true, userId:user.id}})
+        dispatch({ type: SHOW_POPUP, payload: { visually: true, userId: user.id } })
     }
 
     return (
         <li className="user__item user">
             <button type="button" className="user__avatar" onClick={openPopup}>
-                <img src={user.avatar} alt={user.name} width="130" height="130"/>
+                <img src={user.avatar} alt={user.name} width="130" height="130" />
             </button>
             <div className="user__content">
                 <a href="/" className="user__name user-link" onClick={openPopup}><h3>{user.name} {user.surname}</h3></a>
