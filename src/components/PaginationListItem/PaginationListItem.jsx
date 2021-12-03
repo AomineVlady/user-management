@@ -3,7 +3,7 @@ import "./PaginationListItem.css";
 import {
     getUsersRequested,
     setCurrentPage,
-} from "../MainPage/store/main-page.action";
+} from "../MainPage/store/main-page.action-creators";
 import PropTypes from "prop-types";
 import store from "../../store/store";
 

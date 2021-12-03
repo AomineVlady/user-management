@@ -5,7 +5,7 @@ import { pathList } from "../../../common/constants.js";
 import SvgIconClose from "../../../common/svgIcons/SvgIconClose";
 import SvgIconSettings from "../../../common/svgIcons/SvgIconSettings";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserRequested} from './store/popup.action'
+import { getUserRequested } from './store/popup.action-creators'
 import { SHOW_POPUP } from "../../MainPage/store/main-page.action"
 
 const Popup = () => {
@@ -16,7 +16,7 @@ const Popup = () => {
 
     useEffect(() => {
         dispatch(getUserRequested(showPopup.userId))
-    }, [dispatch,showPopup.userId])
+    }, [dispatch, showPopup.userId])
 
     const closePopup = () => {
         dispatch({
